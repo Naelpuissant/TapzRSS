@@ -25,4 +25,4 @@ class Crawler():
         if self.output:
             with open(self.output, 'w', encoding='UTF8') as f:
                 f.write(json.dumps(feeds, sort_keys=True, indent=4))
-        return True
+        return json.dumps(feeds, sort_keys=True, indent=4)

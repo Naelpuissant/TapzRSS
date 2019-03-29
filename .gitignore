@@ -1,2 +1,4 @@
-/__pycache__/
-/output/*
+output/*
+__pycache__/
+utils/__pycache__/
+utils/rss/__pycache__/
