@@ -15,3 +15,12 @@ class RssParser():
 
     def get_item(self, i):
         return self.items[i]
+    
+    def get_feed(self, name):
+        feed = list()
+        for item in self.items:
+            article = dict()
+            article['title'] = item.find('./title').text
+            article['link'] = item.find('./link').text
+            feed.append(article)
+        return feed

@@ -1,5 +1,5 @@
 import json
-from utils.rss.RssParser import RssParser
+from utils.rss.RssManager import RssManager 
 
 class Crawler():
 
@@ -9,17 +9,9 @@ class Crawler():
         self.verbose  = False
         self.output   = False
 
+
     def run(self):
-        feeds = dict()
-        for name,url in self.urls.items():
-            feed = list()
-            rp = RssParser(url)
-            for item in rp.items:
-                article = dict()
-                article['title'] = item.find('./title').text
-                article['link'] = item.find('./link').text
-                feed.append(article)
-            feeds[name] = feed
+        feeds = RssManager(self.urls).get_feeds()
         if self.verbose is True:
             print(json.dumps(feeds, sort_keys=True, indent=4, ensure_ascii=False))
         if self.output:

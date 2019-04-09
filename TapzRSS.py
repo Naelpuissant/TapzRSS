@@ -7,7 +7,7 @@ import utils.Crawler as Crawler
 @click.command()
 @click.option('--listen', '-l', is_flag=True, help='Run as listener mode.')
 @click.option('--verbose', '-v', is_flag=True, help='Run as verbose mode.')
-@click.option('--output', help='Store result into a json file')
+@click.option('--output', '-o', help='Store result into a json file')
 def crawl(listen, verbose, output):
     c = Crawler.Crawler(urls=config.URLS)
     if listen:
