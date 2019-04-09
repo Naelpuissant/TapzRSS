@@ -15,7 +15,7 @@ def crawl(listen, verbose, output):
     if verbose:
         c.verbose = True
     if output:
-        c.output = "./output/" + output
+        c.output = './output/' + output
         
     c.run()
 

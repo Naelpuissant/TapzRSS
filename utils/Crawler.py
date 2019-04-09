@@ -20,9 +20,9 @@ class Crawler():
                 article['link'] = item.find('./link').text
                 feed.append(article)
             feeds[name] = feed
-        if self.verbose:
-            json.dumps(feeds, sort_keys=True, indent=4)
+        if self.verbose is True:
+            print(json.dumps(feeds, sort_keys=True, indent=4, ensure_ascii=False))
         if self.output:
             with open(self.output, 'w', encoding='UTF8') as f:
-                f.write(json.dumps(feeds, sort_keys=True, indent=4))
+                f.write(json.dumps(feeds, sort_keys=True, indent=4, ensure_ascii=False))
         return json.dumps(feeds, sort_keys=True, indent=4)
