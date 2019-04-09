@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 URLS = {
     'developpez': 'http://www.developpez.com/index/rss'
 }

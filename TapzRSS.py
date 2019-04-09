@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 import config
 import click
 import utils.Crawler as Crawler
+from utils.persistence.Persistence import Persistence
 
 
 @click.command()
